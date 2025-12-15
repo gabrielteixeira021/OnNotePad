@@ -13,7 +13,7 @@ class NoteListCreateView(generics.ListCreateAPIView):
 
     def get_queryset(self):
         user = self.request.user
-        return Note.objects.filter(author=user)
+        return Note.objects.filter(author=user)  # pyright: ignore[reportAttributeAccessIssue]
 
     def perform_create(self, serializer):
         if serializer.is_valid():
