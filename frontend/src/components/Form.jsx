@@ -1,3 +1,4 @@
+import "../styles/Form.css";
 import { useState } from "react";
 import api from "../api";
 import { useNavigate } from "react-router-dom";
@@ -30,7 +31,11 @@ function Form({ route, method }) {
         navigate("/login"); // navigate to login page after successful registration
       }
     } catch (error) {
-      alert(error.response?.data?.detail || error.message || "Erro ao processar requisição");
+      alert(
+        error.response?.data?.detail ||
+          error.message ||
+          "Erro ao processar requisição",
+      );
     } finally {
       setLoading(false);
     }
